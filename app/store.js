@@ -1,15 +1,12 @@
 import { createStore, applyMiddleware, combineReducers }    from 'redux';
 import thunk                                                from 'redux-thunk';
-import reducer                                              from './reducer';
+import * as reducer                                         from './reducer';
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 
-console.log(reducer);
-
 export default function storeConfig(initial) {
-    const targetReducer = reducer;
     const store = createStoreWithMiddleware(combineReducers({
-        ...targetReducer,
+        ...reducer,
     }), initial);
 
     if (module.hot) {

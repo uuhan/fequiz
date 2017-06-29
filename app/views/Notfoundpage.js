@@ -6,7 +6,7 @@ export default class Notfoundpage extends Component {
     }
 
     componentDidMount() {
-        console.log('error page');
+        console.log('404 - not found');
     }
 
     render() {

@@ -2,7 +2,7 @@ import React                    from 'react';
 import { render }               from 'react-dom';
 import {
     Router,
-    Layout,
+    Switch,
     Route,
     Redirect,
 }                               from 'react-router';
@@ -35,14 +35,18 @@ class Main {
         render(
             <Provider store={this.store}>
                 <HashRouter>
-                    <Layout>
-                        <Route path='/' component={Mainpage}>
-                            <Route path="error" component={Errorpage}>
-                              <Route path='404' component={Notfoundpage}/>
-                            </Route>
-                        </Route>
-                        <Redirect from="*" to='/error/404'/>
-                    </Layout>
+                    <Switch>
+                        <Route exact path="/" component={Mainpage}/>
+                        <Route path="/error" component={() => {
+                            return (
+                                <Errorpage>
+                                    <Route path='/error/404' component={Notfoundpage}/>
+                                    {/* TODO more error pages */}
+                                </Errorpage>
+                            )
+                        }}/>
+                        <Redirect to='/error/404'/>
+                    </Switch>
                 </HashRouter>
             </Provider>, this.entry
         );

@@ -1,8 +1,7 @@
 // add some state
-import { combineReducers } from 'redux';
 import { ADD_ITEM } from './actions';
 
-function items(state={}, action) {
+export function items(state={}, action) {
     switch (action.type) {
         case ADD_ITEM:
             return Object.assign({}, state, {
@@ -13,9 +12,3 @@ function items(state={}, action) {
             return state;
     }
 }
-
-const reducer = combineReducers({
-    items: items
-})
-
-export default reducer;
