@@ -33,8 +33,10 @@ module.exports = merge(common, {
                 query: {
                     // es6 support
                     presets: ['react', 'es2015', 'stage-0'],
-                    plugins: ['transform-decorators-legacy',
-                        ['import', { libraryName: 'antd', style: 'css' }]],
+                    plugins: ['transform-decorators-legacy', ['import', {
+                        libraryName: 'antd',
+                        style: 'css'
+                    }]],
                 },
                 loader: 'babel-loader',
             }
