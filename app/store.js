@@ -9,7 +9,6 @@ export default function storeConfig(initial) {
     const targetReducer = reducer;
     const store = createStoreWithMiddleware(combineReducers({
         ...targetReducer,
-        routing: routerReducer
     }), initial);
 
     if (module.hot) {

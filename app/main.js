@@ -3,10 +3,9 @@ import { render }               from 'react-dom';
 import {
     Router,
     Route,
-    useRouterHistory,
     Redirect,
 }                               from 'react-router';
-import { createHashHistory }    from 'history';
+import { HashRouter }           from 'react-router-dom';
 
 // redux init
 import { applyMiddleware }      from 'redux';
@@ -23,11 +22,6 @@ class Main {
         // mount point
         this.entry = entry;
 
-        // router managment
-        this.history = useRouterHistory(createHashHistory)({
-            queryKey: false
-        });
-
         // state management
         this.store = storeConfig();
 
@@ -37,14 +31,14 @@ class Main {
     operator() {
         render(
             <Provider store={this.store}>
-                <Router history={this.history}>
+                <HashRouter>
                     <Route path='/' component={Mainpage}>
                         <Route path="error" component={Errorpage}>
                           <Route path='404' component={Notfoundpage}/>
                         </Route>
                     </Route>
                     <Redirect from="*" to='/error/404'/>
-                </Router>
+                </HashRouter>
             </Provider>, this.entry
         );
     }
