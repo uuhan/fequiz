@@ -10,7 +10,7 @@ module.exports = merge(common, {
     },
 
     plugins: [
-        new webpack.optimize.OccurenceOrderPlugin(),
+        new webpack.optimize.OccurrenceOrderPlugin(),
 
         new webpack.optimize.CommonsChunkPlugin({
             name: 'common.bundle',
@@ -32,13 +32,15 @@ module.exports = merge(common, {
         loaders: [
             {
                 test: /\.jsx?$/,
-                loader: 'babel',
+                loader: 'babel-loader',
                 exclude: /node_modules/,
                 include: __dirname,
                 query: {
                     presets: ['react', 'es2015', 'stage-0'],
-                    plugins: ['transform-decorators-legacy', ['import'
-                             , { libraryName: 'antd', style: 'css' }]],
+                    plugins: ['transform-decorators-legacy', ['import' , {
+                        libraryName: 'antd',
+                        style: 'css'
+                    }]],
                 }
             }
         ]
