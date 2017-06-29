@@ -2,8 +2,9 @@ import { createStore, applyMiddleware, combineReducers }    from 'redux';
 import thunk                                                from 'redux-thunk';
 import reducer                                              from './reducer';
 
-let activeStore;
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
+
+console.log(reducer);
 
 export default function storeConfig(initial) {
     const targetReducer = reducer;
@@ -17,10 +18,5 @@ export default function storeConfig(initial) {
             store.replaceReducer(nextReducer);
         });
     }
-    activeStore = store;
     return store;
-}
-
-export function getActiveStore() {
-    return activeStore;
 }
