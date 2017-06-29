@@ -3,7 +3,7 @@ import { render }               from 'react-dom';
 import {
     Router,
     Route,
-    useRouteHistory,
+    useRouterHistory,
     Redirect,
 }                               from 'react-router';
 import { createHashHistory }    from 'history';
@@ -16,6 +16,7 @@ import storeConfig              from './store';
 import '../styles/app';
 
 // TODO views
+import Mainpage                 from './views/Mainpage';
 
 class Main {
     constructor(entry) {
