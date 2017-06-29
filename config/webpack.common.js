@@ -34,30 +34,14 @@ module.exports = {
 
     module: {
         loaders: [
-            {
-            test: /\.json$/,
-            loader: 'json'
-        },
-
         {
             test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)\??/,
             loader: 'file?name=static/[name].[hash].[ext]'
 
         },
-
-        {
-            test: /\.less$/,
-            loader: 'style!css!less',
-        },
-
-        {
-            test: /\.styl/,
-            loader: 'style!css!stylus?sourceMap',
-        },
-
         {
             test: /\.css$/,
-            loader: 'style!css',
+            loader: 'style-loader!css-loader',
         }
         ]
     }

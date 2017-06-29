@@ -2,6 +2,7 @@ import React                    from 'react';
 import { render }               from 'react-dom';
 import {
     Router,
+    Layout,
     Route,
     Redirect,
 }                               from 'react-router';
@@ -12,10 +13,12 @@ import { applyMiddleware }      from 'redux';
 import { Provider }             from 'react-redux';
 import storeConfig              from './store';
 
-import '../styles/app';
+// import '../styles/app';
 
 // TODO views
 import Mainpage                 from './views/Mainpage';
+import Errorpage                from './views/Errorpage';
+import Notfoundpage             from './views/Notfoundpage';
 
 class Main {
     constructor(entry) {
@@ -32,12 +35,14 @@ class Main {
         render(
             <Provider store={this.store}>
                 <HashRouter>
-                    <Route path='/' component={Mainpage}>
-                        <Route path="error" component={Errorpage}>
-                          <Route path='404' component={Notfoundpage}/>
+                    <Layout>
+                        <Route path='/' component={Mainpage}>
+                            <Route path="error" component={Errorpage}>
+                              <Route path='404' component={Notfoundpage}/>
+                            </Route>
                         </Route>
-                    </Route>
-                    <Redirect from="*" to='/error/404'/>
+                        <Redirect from="*" to='/error/404'/>
+                    </Layout>
                 </HashRouter>
             </Provider>, this.entry
         );

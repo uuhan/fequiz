@@ -28,7 +28,6 @@ module.exports = merge(common, {
         loaders: [
             {
                 test: /\.jsx?$/,
-                loader: 'babel',
                 exclude: /node_modules/,
                 include: [ __dirname ],
                 query: {
@@ -36,7 +35,8 @@ module.exports = merge(common, {
                     presets: ['react', 'es2015', 'stage-0'],
                     plugins: ['transform-decorators-legacy',
                         ['import', { libraryName: 'antd', style: 'css' }]],
-                }
+                },
+                loader: 'babel-loader',
             }
         ]
     }
