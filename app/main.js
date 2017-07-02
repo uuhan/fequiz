@@ -13,7 +13,7 @@ import storeConfig              from './store';
 
 import '../styles/app';
 
-// TODO views
+// TODO: views
 import Mainpage                 from './views/Mainpage';
 import Errorpage                from './views/Errorpage';
 import Notfoundpage             from './views/Notfoundpage';
@@ -39,7 +39,7 @@ class Main {
                             return (
                                 <Errorpage>
                                     <Route path='/error/404' component={Notfoundpage}/>
-                                    {/* TODO more error pages */}
+                                    {/* TODO: more error pages */}
                                 </Errorpage>
                             );
                         }}/>

@@ -43,19 +43,19 @@ export default class EditModal extends Component {
         cb: PropTypes.func.isRequired
     }
 
+    /* TODO: form completeness check */
     okClick(modalVisible) {
         this.setState({ modalVisible }, () => {
             // callback function
-            this.props.cb();
-            console.log(this.state.title);
+            const { url, title, content } = this.state;
+            this.props.cb(url, title, content);
         });
     }
 
     cancelClick(modalVisible) {
         this.setState({ modalVisible }, () => {
-            // TODO some cleanup
-            const { url, title, content } = this.state;
-            this.props.cb(url, title, content);
+            // TODO: some cleanup
+            this.props.cb();
         });
     }
 
