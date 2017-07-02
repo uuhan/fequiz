@@ -25,7 +25,7 @@ class Main {
 
         // state management
         this.store = storeConfig({
-            // initial value: an example article
+            // initial value: an example article, I not have the image url you demanded, you can add your own articles.
             items: [{
                 /** @type {string} */
                 url: 'http://placekitten.com/g/1600/900',
