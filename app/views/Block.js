@@ -34,10 +34,6 @@ export default class Block extends Component {
         content: PropTypes.string.isRequired
     }
 
-    componentDidMount() {
-        console.log('Block mounted');
-    }
-
     render() {
         return (
             <div style={{ padding: 0, position: 'relative', textAlign: 'left' }}>
