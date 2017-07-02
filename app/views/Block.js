@@ -3,7 +3,7 @@ import { connect }              from 'react-redux';
 import { Card, Button }         from 'antd';
 import PropTypes                from 'prop-types';
 
-import { patchItem }            from '../actions';
+import { patchItem, addItem }   from '../actions';
 
 /** use local stylesheet */
 import {

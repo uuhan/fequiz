@@ -27,6 +27,10 @@ export default class Mainpage extends Component {
         };
     }
 
+    componentWillReceiveProps(ntProps) {
+        console.log(ntProps);
+    }
+
     render() {
         return (
             <Row style={{ marginTop: '60px', backgroundColor: '#f2f2f2' }}>
