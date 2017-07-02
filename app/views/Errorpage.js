@@ -15,6 +15,6 @@ export default class Errorpage extends Component {
                 error page
                 { this.props.children }
             </div>
-        )
+        );
     }
 }

@@ -1,7 +1,6 @@
 import React                    from 'react';
 import { render }               from 'react-dom';
 import {
-    Router,
     Switch,
     Route,
     Redirect,
@@ -9,7 +8,6 @@ import {
 import { HashRouter }           from 'react-router-dom';
 
 // redux init
-import { applyMiddleware }      from 'redux';
 import { Provider }             from 'react-redux';
 import storeConfig              from './store';
 
@@ -43,7 +41,7 @@ class Main {
                                     <Route path='/error/404' component={Notfoundpage}/>
                                     {/* TODO more error pages */}
                                 </Errorpage>
-                            )
+                            );
                         }}/>
                         <Redirect to='/error/404'/>
                     </Switch>

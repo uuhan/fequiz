@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { Card, Button }             from 'antd';
+import { Card, Button }     from 'antd';
 import PropTypes            from 'prop-types';
 
 /** use local stylesheet */
-import {hoverBtn}           from './Block.css';
+import { hoverBtn }         from './Block.css';
 
 /**
  * Block: A Block for showing an article
@@ -18,7 +18,7 @@ export default class Block extends Component {
         this.state = {
             /** @type {boolean} check if mouse hovered */
             hovered: true
-        }
+        };
     }
 
     static propTypes = {
@@ -34,12 +34,12 @@ export default class Block extends Component {
     }
 
     render() {
-        return(
-            <div style={{ padding: 0, position: 'relative', textAlign: 'left'}}>
+        return (
+            <div style={{ padding: 0, position: 'relative', textAlign: 'left' }}>
                 <Button size='large' type='primary' className={hoverBtn}>
                     Edit
                 </Button>
-                <div style={{padding: '20px', backgroundColor: 'white'}}>
+                <div style={{ padding: '20px', backgroundColor: 'white' }}>
                     <Card style={{ width: '100%' }} bodyStyle={{ padding: 0 }} bordered={false}>
                         <div className="custom-image">
                             <img alt="" width="100%" src={this.props.url} />
@@ -51,6 +51,6 @@ export default class Block extends Component {
                     </Card>
                 </div>
             </div>
-        )
+        );
     }
 }

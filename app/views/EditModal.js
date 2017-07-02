@@ -12,6 +12,6 @@ export default class EditModal extends Component {
         return (
             <div>
             </div>
-        )
+        );
     }
 }
