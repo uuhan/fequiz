@@ -35,7 +35,7 @@ export default class Mainpage extends Component {
                     {/* List Blocks Here */}
                     { this.props.items.map((v, k) => {
                         return (
-                            <Block {...v} key={k}></Block>
+                            <Block {...v} key={k} index={k}></Block>
                         );
                     })}
                 </Col>

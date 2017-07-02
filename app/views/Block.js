@@ -1,6 +1,9 @@
 import React, { Component }     from 'react';
+import { connect }              from 'react-redux';
 import { Card, Button }         from 'antd';
 import PropTypes                from 'prop-types';
+
+import { patchItem }            from '../actions';
 
 /** use local stylesheet */
 import {
@@ -18,6 +21,9 @@ import EditModal                from './EditModal';
  * @class Block
  * @extends {Component}
  */
+@connect(({ items }) => {
+    return { items };
+})
 export default class Block extends Component {
     constructor(props) {
         super(props);
@@ -35,10 +41,13 @@ export default class Block extends Component {
         /** @type {string} the title of an article */
         title: PropTypes.string.isRequired,
         /** @type {string} the content of an article */
-        content: PropTypes.string.isRequired
+        content: PropTypes.string.isRequired,
+        /** @type {number} index in stored array */
+        index: PropTypes.number
     }
 
     render() {
+        const { dispatch, index } = this.props;
         return (
             <div style={{
                 padding: 0,
@@ -57,7 +66,10 @@ export default class Block extends Component {
                     Edit
                 </Button>
                 <EditModal head='Edit Article' visible={this.state.visible}
-                    cb={() => {
+                    cb={(obj) => {
+                        if (obj !== null) {
+                            dispatch(patchItem(index, obj));
+                        }
                         this.setState({
                             visible: false
                         });

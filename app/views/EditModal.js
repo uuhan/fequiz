@@ -48,7 +48,7 @@ export default class EditModal extends Component {
         this.setState({ modalVisible }, () => {
             // callback function
             const { url, title, content } = this.state;
-            this.props.cb(url, title, content);
+            this.props.cb({ url, title, content });
         });
     }
 
