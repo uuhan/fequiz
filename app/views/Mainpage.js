@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Button, Row, Col } from 'antd';
 
 import { connect }          from 'react-redux';
+import { addItem }          from '../actions';
 
 import Block                from './Block';
 import EditModal            from './EditModal';
@@ -32,6 +33,7 @@ export default class Mainpage extends Component {
     }
 
     render() {
+        const { dispatch } = this.props;
         return (
             <Row style={{ marginTop: '60px', backgroundColor: '#f2f2f2' }}>
                 <Col span={2}/>
@@ -58,7 +60,14 @@ export default class Mainpage extends Component {
                             });
                         }}
                     >+ Add New</Button>
-                    <EditModal head='Add Article' visible={this.state.newModalVisible} cb={() => {}}/>
+                    <EditModal head='Add Article' visible={this.state.newModalVisible} cb={(obj) => {
+                        if (obj !== undefined) {
+                            dispatch(addItem(obj));
+                        }
+                        this.setState({
+                            newModalVisible: false
+                        });
+                    }}/>
                 </Col>
                 <Col span={2}/>
             </Row>

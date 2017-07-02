@@ -67,7 +67,7 @@ export default class Block extends Component {
                 </Button>
                 <EditModal head='Edit Article' visible={this.state.visible}
                     cb={(obj) => {
-                        if (obj !== null) {
+                        if (obj !== undefined) {
                             dispatch(patchItem(index, obj));
                         }
                         this.setState({
