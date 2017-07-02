@@ -13,9 +13,6 @@ export default class Mainpage extends Component {
         };
     }
 
-    componentDidMount() {
-    }
-
     render() {
         return (
             <Row style={{marginTop: '60px', backgroundColor: '#f2f2f2'}}>

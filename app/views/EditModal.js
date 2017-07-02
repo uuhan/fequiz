@@ -44,6 +44,7 @@ export default class EditModal extends Component {
     cancelClick(modalVisible) {
         this.setState({ modalVisible }, () => {
             // TODO some cleanup
+            this.props.cb();
         });
     }
 

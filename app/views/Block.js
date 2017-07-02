@@ -35,6 +35,7 @@ export default class Block extends Component {
     }
 
     componentDidMount() {
+        console.log('Block mounted');
     }
 
     render() {
@@ -49,7 +50,12 @@ export default class Block extends Component {
                 >
                     Edit
                 </Button>
-                <EditModal head='Edit Article' visible={this.state.visible} cb={() => {}}
+                <EditModal head='Edit Article' visible={this.state.visible}
+                    cb={() => {
+                        this.setState({
+                            visible: false
+                        });
+                    }}
                     url={this.props.url}
                     title={this.props.title}
                     content={this.props.content}
