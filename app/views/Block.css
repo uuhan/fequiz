@@ -1,6 +1,8 @@
 /*
  * local style for block
  */
+
+/** hover button stylesheet */
 :local(.hoverBtn) {
     background-color: black;
     position: absolute;
@@ -19,6 +21,14 @@
     display: block;
 }
 
+/** card shadow */
+:local(.blockShadow) {
+    -moz-box-shadow:    1px 1px 1px 1px #ccc;
+    -webkit-box-shadow: 1px 1px 1px 1px #ccc;
+    box-shadow:         1px 1px 1px 1px #ccc;
+}
+
+/** image fix aspect ratio */
 :local(.fixedRatio:after) {
     content: "";
     display: block;

@@ -3,7 +3,11 @@ import { Card, Button }         from 'antd';
 import PropTypes                from 'prop-types';
 
 /** use local stylesheet */
-import { hoverBtn, fixedRatio } from './Block.css';
+import {
+    hoverBtn,
+    fixedRatio,
+    blockShadow
+}                               from './Block.css';
 
 import EditModal                from './EditModal';
 
@@ -36,7 +40,13 @@ export default class Block extends Component {
 
     render() {
         return (
-            <div style={{ padding: 0, position: 'relative', textAlign: 'left' }}>
+            <div style={{
+                padding: 0,
+                position: 'relative',
+                textAlign: 'left',
+                marginBottom: '30px',
+            }} className={blockShadow}
+            >
                 <Button size='large' type='primary' className={hoverBtn}
                     onClick={() => {
                         this.setState({
