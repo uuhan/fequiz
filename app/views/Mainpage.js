@@ -18,7 +18,7 @@ export default class Mainpage extends Component {
                 <Col span={14}>
                     {/* List Blocks Here */}
                     <Block
-                        url='https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png'
+                        url='http://placekitten.com/g/1600/900'
                         title='Europe Street beat'
                         content={
                             'Dolor proident quis cillum anim ea officia anim ex culpa minim occaecat et.' +

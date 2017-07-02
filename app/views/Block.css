@@ -18,3 +18,9 @@
     z-index: 1000;
     display: block;
 }
+
+:local(.fixedRatio:after) {
+    content: "";
+    display: block;
+    padding-top: 56.25%;
+}

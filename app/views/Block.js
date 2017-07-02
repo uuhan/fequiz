@@ -3,7 +3,7 @@ import { Card, Button }     from 'antd';
 import PropTypes            from 'prop-types';
 
 /** use local stylesheet */
-import { hoverBtn }         from './Block.css';
+import { hoverBtn, fixedRatio } from './Block.css';
 
 /**
  * Block: A Block for showing an article
@@ -41,8 +41,11 @@ export default class Block extends Component {
                 </Button>
                 <div style={{ padding: '20px', backgroundColor: 'white' }}>
                     <Card style={{ width: '100%' }} bodyStyle={{ padding: 0 }} bordered={false}>
-                        <div className="custom-image">
-                            <img alt="" width="100%" src={this.props.url} />
+                        <div className={ fixedRatio } style={{
+                            position: 'relative',
+                            background: `url(${this.props.url}) top center no-repeat`,
+                            backgroundSize: 'contain'
+                        }}>
                         </div>
                         <div className="custom-card">
                             <h2>{this.props.title}</h2>
