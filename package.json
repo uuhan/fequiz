@@ -41,6 +41,7 @@
     "webpack-merge": "^4.1.0"
   },
   "dependencies": {
+    "@types/redux-logger": "^3.0.0",
     "antd": "^2.11.2",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
