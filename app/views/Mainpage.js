@@ -2,10 +2,15 @@ import React, { Component } from 'react';
 import { Button, Row, Col } from 'antd';
 
 import Block                from './Block';
+import EditModal            from './EditModal';
 
 export default class Mainpage extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            /** @type {boolean} new article modal */
+            newModalVisible: false
+        };
     }
 
     componentDidMount() {
@@ -37,10 +42,17 @@ export default class Mainpage extends Component {
                         style={{
                             width: '100%',
                             backgroundColor: '#5fb485'
-                        }}>+ Add New</Button>
+                        }}
+                        onClick={() => {
+                            this.setState({
+                                newModalVisible: true
+                            });
+                        }}
+                    >+ Add New</Button>
+                    <EditModal head='Add Article' visible={this.state.newModalVisible} cb={() => {}}/>
                 </Col>
                 <Col span={2}/>
             </Row>
-        )
+        );
     }
 }

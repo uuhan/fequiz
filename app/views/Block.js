@@ -1,9 +1,11 @@
-import React, { Component } from 'react';
-import { Card, Button }     from 'antd';
-import PropTypes            from 'prop-types';
+import React, { Component }     from 'react';
+import { Card, Button }         from 'antd';
+import PropTypes                from 'prop-types';
 
 /** use local stylesheet */
 import { hoverBtn, fixedRatio } from './Block.css';
+
+import EditModal                from './EditModal';
 
 /**
  * Block: A Block for showing an article
@@ -17,7 +19,9 @@ export default class Block extends Component {
         super(props);
         this.state = {
             /** @type {boolean} check if mouse hovered */
-            hovered: true
+            hovered: true,
+            /** @type {boolean} modal visible */
+            visible: false,
         };
     }
 
@@ -36,9 +40,20 @@ export default class Block extends Component {
     render() {
         return (
             <div style={{ padding: 0, position: 'relative', textAlign: 'left' }}>
-                <Button size='large' type='primary' className={hoverBtn}>
+                <Button size='large' type='primary' className={hoverBtn}
+                    onClick={() => {
+                        this.setState({
+                            visible: true
+                        });
+                    }}
+                >
                     Edit
                 </Button>
+                <EditModal head='Edit Article' visible={this.state.visible} cb={() => {}}
+                    url={this.props.url}
+                    title={this.props.title}
+                    content={this.props.content}
+                />
                 <div style={{ padding: '20px', backgroundColor: 'white' }}>
                     <Card style={{ width: '100%' }} bodyStyle={{ padding: 0 }} bordered={false}>
                         <div className={ fixedRatio } style={{

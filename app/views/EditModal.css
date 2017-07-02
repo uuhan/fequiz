@@ -1,0 +1,13 @@
+/*
+ * local style for editmodal
+ */
+
+:local(.verticalCenterModal) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+:local(.verticalCenterModal) .ant-modal {
+  top: 0;
+}
