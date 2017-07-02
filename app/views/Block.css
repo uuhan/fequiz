@@ -1,0 +1,20 @@
+/*
+ * local style for block
+ */
+:local(.hoverBtn) {
+    background-color: black;
+    position: absolute;
+    right: 0;
+    opacity: 0;
+    z-index: 1000;
+    display: block;
+}
+
+:local(.hoverBtn:hover) {
+    background-color: black;
+    position: absolute;
+    right: 0;
+    opacity: 0.4;
+    z-index: 1000;
+    display: block;
+}
