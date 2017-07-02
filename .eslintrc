@@ -1,0 +1,75 @@
+{
+    "env": {
+        "node": true,
+        "mocha": true,
+        "es6": true,
+        "browser": true,
+        "jquery": true
+    },
+
+    "globals":{
+        "WebUploader":true,
+        "push":true,
+        "go":true
+    },
+
+    "parseOptions": {
+        "ecmaFeatures": {
+            "jsx": true,
+            "experimentalObjectRestSpread": true
+        }
+    },
+
+    "extends": [
+        "eslint:recommended"
+    ],
+    "plugins": [
+        "react"
+    ],
+
+    "parser": "babel-eslint",
+
+    "rules": {
+        "comma-dangle": [
+            0
+        ],
+        "indent": [
+            "error",
+            4,
+            {
+                "VariableDeclarator": { "var": 1, "let": 1, "const": 2 },
+                "SwitchCase": 1
+            }
+        ],
+        "max-len": [
+            "error",
+            120
+        ],
+        "no-console": 0,
+        "space-before-function-paren": [
+            2,
+            {
+                "named": "never",
+                "anonymous": "always"
+            }
+        ],
+        "no-use-before-define": [
+            2,
+            "nofunc"
+        ],
+
+        "react/jsx-uses-react": "error",
+        "react/jsx-uses-vars": "error",
+        "no-trailing-spaces": "error",
+        "keyword-spacing": ["error", {
+            "before": true,
+            "after": true
+        }],
+        "object-curly-spacing": ["error", "always"],
+        "space-before-blocks": "error",
+        "space-infix-ops": "error",
+        "brace-style": "error",
+        "semi": ["error", "always"],
+        "comma-spacing": ["error", { "before": false, "after": true  }]
+    }
+}
