@@ -12,10 +12,7 @@ export function items(state = [], action) {
         // patch an existing item
         case PATCH_ITEM: {
             const { k, item } = action;
-            console.error(item);
-            console.error(state[k]);
             state[k] = item;
-            console.error(state[k]);
             return state;
         }
 
