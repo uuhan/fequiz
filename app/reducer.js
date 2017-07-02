@@ -1,13 +1,11 @@
 // add some state
 import { ADD_ITEM } from './actions';
 
-export function items(state = {}, action) {
+export function items(state = [], action) {
     switch (action.type) {
         case ADD_ITEM:
-            return Object.assign({}, state, {
-                item: action.item
-            });
-
+            state.push(action.item);
+            return state;
         default:
             return state;
     }
