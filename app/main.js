@@ -11,7 +11,7 @@ import { HashRouter }           from 'react-router-dom';
 import { Provider }             from 'react-redux';
 import storeConfig              from './store';
 
-// import '../styles/app';
+import '../styles/app';
 
 // TODO views
 import Mainpage                 from './views/Mainpage';

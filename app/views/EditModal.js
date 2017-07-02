@@ -1,8 +1,14 @@
 import React, { Component }     from 'react';
 import PropTypes                from 'prop-types';
-import { Modal }                from 'antd';
+import {
+    Modal,
+    Form,
+    Input
+}                               from 'antd';
 
 import { verticalCenterModal }  from './EditModal.css';
+
+const FormItem = Form.Item;
 
 /**
  * EditModal: modal for editing & adding new article
@@ -48,6 +54,9 @@ export default class EditModal extends Component {
         });
     }
 
+    handleInputChange() {
+    }
+
     componentWillReceiveProps(ntProps) {
         const { visible } = ntProps;
         this.setState({
@@ -58,15 +67,40 @@ export default class EditModal extends Component {
     render() {
         return (
             <Modal
-                title={ this.props.head }
+                closable={false}
+                maskClosable={true}
+                okText='Save'
+                cancelText='Cancel'
                 wrapClassName={verticalCenterModal}
                 visible={this.state.modalVisible}
                 onOk={() => this.okClick.bind(this)(false)}
                 onCancel={() => this.cancelClick.bind(this)(false)}
             >
-                <p>{this.props.url}</p>
-                <p>{this.props.title}</p>
-                <p>{this.props.content}</p>
+                <h2 style={{ marginBottom: '10px' }}>{this.props.head}</h2>
+                <Form>
+                    <FormItem label='Image'></FormItem>
+                    <FormItem>
+                        <Input
+                            type='text'
+                            value={this.props.url}
+                        ></Input>
+                    </FormItem>
+                    <FormItem label='Title'></FormItem>
+                    <FormItem>
+                        <Input
+                            type='text'
+                            value={this.props.title}
+                        ></Input>
+                    </FormItem>
+                    <FormItem label='Content'></FormItem>
+                    <FormItem>
+                        <Input
+                            type='textarea'
+                            autosize={{ minRows: 4, maxRows: 10 }}
+                            value={this.props.content}
+                        ></Input>
+                    </FormItem>
+                </Form>
             </Modal>
         );
     }

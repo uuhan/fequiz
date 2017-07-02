@@ -1,3 +1,13 @@
 /*
  * global style here
  */
+
+.ant-modal .ant-btn-primary {
+    color: #fff;
+    background-color: #338557!important;
+    border-color: #338557!important;
+}
+
+.ant-form-item {
+    margin-bottom: 0px!important;
+}
