@@ -5,5 +5,3 @@
 3. app内的 errorpage 未加样式， 比较简陋。
 
 4. npm run build 打包编译， dist下生成编译代码。
-
-5. 我叫 徐敏辉(xuminhui_jia@126.com)， 我喜欢前端 ；）
